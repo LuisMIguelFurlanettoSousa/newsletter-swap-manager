@@ -1,0 +1,165 @@
+/* Landing page — experimento DEC-014 */
+/* Minimal, fast-loading, single-file CSS. Mobile first. */
+
+:root {
+  --text: #1a1a1a;
+  --muted: #5a5a5a;
+  --bg: #ffffff;
+  --accent: #2a5bd7;
+  --accent-hover: #1e47b2;
+  --surface-alt: #f6f7fb;
+  --border: #e2e4eb;
+  --max: 72ch;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.55;
+  font-size: 17px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+.container.narrow { max-width: var(--max); }
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0.2em 0 0.6em; }
+h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); margin: 0 0 0.8em; }
+h3 { font-size: 1.15rem; margin: 0 0 0.4em; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--accent-hover); }
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 0.4em;
+  font-weight: 600;
+}
+
+.hero {
+  padding: 72px 0 56px;
+  background: linear-gradient(180deg, #ffffff 0%, var(--surface-alt) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero .sub {
+  font-size: 1.12rem;
+  color: var(--muted);
+  max-width: 60ch;
+  margin-bottom: 1.6em;
+}
+
+.cta-primary {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff !important;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1rem;
+  border: 0;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+
+.cta-primary:hover { background: var(--accent-hover); }
+
+.cta-helper { font-size: 0.86rem; color: var(--muted); margin-top: 0.6em; }
+.cta-helper.small { font-size: 0.78rem; margin-top: 0.8em; }
+
+.problem, .how, .waitlist {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.problem { background: #fff; }
+.how { background: var(--surface-alt); }
+.waitlist { background: #fff; }
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.steps li {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+@media (min-width: 780px) {
+  .steps { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Form */
+.waitlist-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 1.2em;
+}
+
+.waitlist-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.92rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.waitlist-form input,
+.waitlist-form textarea,
+.waitlist-form select {
+  font: inherit;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 13px;
+  width: 100%;
+}
+
+.waitlist-form input:focus,
+.waitlist-form textarea:focus,
+.waitlist-form select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.waitlist-form button { justify-self: start; }
+
+footer {
+  padding: 28px 0 40px;
+  color: var(--muted);
+}
+
+.small { font-size: 0.82rem; color: var(--muted); }
